@@ -1,0 +1,47 @@
+{
+  "name": "gitclub",
+  "version": "1.0.0",
+  "description": "GitClub (GitHubot) — Production-grade GitHub & Developer Discord Bot for programmers and communities.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "deploy:commands": "tsx src/scripts/deployCommands.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "developer-tools",
+    "github",
+    "npm",
+    "docs",
+    "status",
+    "discordjs-v14"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "^2.4.0",
+    "axios": "^1.7.9",
+    "discord-api-types": "^0.37.114",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "lru-cache": "^11.0.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.13.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
