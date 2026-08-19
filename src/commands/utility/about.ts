@@ -29,63 +29,63 @@ export const aboutCommand: Command = {
     const cacheStats = cacheService.getStats();
 
     const embed = AppEmbedBuilder.base(
-      `${EMOJIS.BOT} About Developer Assistant Bot`,
-      'A production-grade developer assistant built for software engineering teams and programming communities. Provides instant access to GitHub repositories, NPM packages, documentation searches, and real-time infrastructure service health.'
+      `${EMOJIS.BOT} عن بوت جيت هَبوت (GitHubot)`,
+      'بوت متكامل للمطورين وفرق البرمجة يتيح فحص مستودعات GitHub وإدارتها عبر OAuth، والبحث في حزم NPM، وتصفح التوثيق البرمجي، ومراقبة حالة الخدمات السحابية لحظياً.'
     )
       .setColor(COLORS.PRIMARY)
       .setThumbnail(client.user?.displayAvatarURL() || null);
 
     embed.addFields(
       {
-        name: '🤖 Bot Version',
+        name: '🤖 إصدار البوت',
         value: '`v1.0.0` (Production)',
         inline: true,
       },
       {
-        name: '👨‍💻 Developer & Team',
-        value: 'Google DeepMind Team',
+        name: '👨‍💻 المطور (Developer)',
+        value: '**Dark**',
         inline: true,
       },
       {
-        name: '⏱️ Process Uptime',
+        name: '⏱️ مدة التشغيل (Uptime)',
         value: `\`${uptime}\``,
         inline: true,
       },
       {
-        name: '🌐 Server Count',
-        value: `**${formatNumber(guildCount)}** guild${guildCount === 1 ? '' : 's'}`,
+        name: '🌐 عدد السيرفرات',
+        value: `**${formatNumber(guildCount)}** سيرفر`,
         inline: true,
       },
       {
-        name: '👥 Users Served',
-        value: `**${formatNumber(userCount)}** members`,
+        name: '👥 الأعضاء والمستخدمين',
+        value: `**${formatNumber(userCount)}** عضو`,
         inline: true,
       },
       {
-        name: '⚡ Commands Registered',
-        value: `**${client.commands.size}** slash commands`,
+        name: '⚡ الأوامر المتاحة',
+        value: `**${client.commands.size}** أمر Slash`,
         inline: true,
       },
       {
-        name: '📚 Library & Runtime',
+        name: '📚 بيئة التشغيل',
         value: `• **Discord.js:** \`v${djsVersion}\`\n• **Node.js:** \`${process.version}\`\n• **TypeScript:** \`v5.7\``,
         inline: true,
       },
       {
-        name: '💾 Memory & Cache',
-        value: `• **Heap Used:** ${formatBytes(memoryUsage.heapUsed)}\n• **Cache Size:** ${cacheStats.size} items\n• **Hit Rate:** ${cacheStats.hitRate.toFixed(1)}%`,
+        name: '💾 الذاكرة والتخزين المؤقت',
+        value: `• **Heap:** ${formatBytes(memoryUsage.heapUsed)}\n• **الكاش:** ${cacheStats.size} عنصر\n• **Hit Rate:** ${cacheStats.hitRate.toFixed(1)}%`,
         inline: true,
       }
     );
 
     const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
       new ButtonBuilder()
-        .setLabel('GitHub Source')
+        .setLabel('مستودع GitHub')
         .setStyle(ButtonStyle.Link)
-        .setURL('https://github.com')
+        .setURL('https://github.com/omarsaber6545-hue/githubot')
         .setEmoji(EMOJIS.GITHUB),
       new ButtonBuilder()
-        .setLabel('Discord.js Docs')
+        .setLabel('توثيق Discord.js')
         .setStyle(ButtonStyle.Link)
         .setURL('https://discord.js.org')
         .setEmoji(EMOJIS.DOCS)

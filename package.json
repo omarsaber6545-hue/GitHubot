@@ -22,7 +22,7 @@
     "status",
     "discordjs-v14"
   ],
-  "author": "Antigravity",
+  "author": "Dark",
   "license": "MIT",
   "dependencies": {
     "@discordjs/rest": "^2.4.0",
